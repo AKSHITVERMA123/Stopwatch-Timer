@@ -21,7 +21,7 @@ const Portfoilo = () => {
     const values = () => {
 
         let courses = document.getElementsByClassName("courses");
-        let c = courses.item(0);
+        let c = courses.item(0);    
         if (c === "C++") {
             return (document.getElementById("cpp").value);
         }
