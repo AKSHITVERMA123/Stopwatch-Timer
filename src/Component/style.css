@@ -158,11 +158,9 @@ form {
 }
 
 .Address {
-  top: 8%;
-  position: relative;
   display: flex;
   justify-content: center;
-  line-height: 140%;
+  line-height: 190%;
 }
 
 .input {

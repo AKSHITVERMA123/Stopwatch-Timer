@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useRef, useState } from 'react';
 import "../Components/styleCSS/style.css";
-import MyResume from './Resume/AkshitCV.pdf';
+import Photo from './Resume/Akshit Photo.jpeg';
+import MyResume from './Resume/Akshit Resume.pdf';
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "react-bootstrap/esm/Card.js";
@@ -16,12 +18,12 @@ import img from "../Components/images/TATATiago.jpg";
 import Img from "../Components/images/python.png";
 const Portfoilo = () => {
 
+    const imageRef = useRef(Photo);
     const [role] = useState('Frontend');
     document.title = "My Portfolio";
     const values = () => {
-
         let courses = document.getElementsByClassName("courses");
-        let c = courses.item(0);    
+        let c = courses.item(0);
         if (c === "C++") {
             return (document.getElementById("cpp").value);
         }
@@ -52,10 +54,10 @@ const Portfoilo = () => {
         }, odd + 20000);
     }
 
-    let even = -2000;
-    setInterval(() => {
+    // let even = -2000;
+    // setInterval(() => {
 
-    }, even + 30000);
+    // }, even + 30000);
 
     let i = 0;
     setTimeout(() => {
@@ -86,7 +88,6 @@ const Portfoilo = () => {
             button.item(0).className = "bg-dark py-0 px-1 darklightmode";
             document.getElementById("path").setAttribute("fill", "#fff");
             document.getElementById("path").setAttribute("d", "M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z");
-
         }
     }
 
@@ -96,6 +97,15 @@ const Portfoilo = () => {
         let role = "Web";
         span.innerHTML = `${role}`;
     }, fcount + 50000);
+
+    // imageRef.current.style.visibility="visible";
+    const animationImage = () => {
+        imageRef.current.style.position = "relative";
+        document.getElementsByClassName("pos").item(0).style.visibility="hidden";
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        imageRef.current.style.animation = "animImage 5s ease 0s 1 normal";
+        // imageRef.current.style.mixBlendMode="darken";
+    }
 
     return (
         <div className="main" id="backgroundClr">
@@ -115,13 +125,13 @@ const Portfoilo = () => {
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Services
+                                Services
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
+                                <li><a className="dropdown-item" href="/Services">My Services</a></li>
+                                    <li><a className="dropdown-item" href="#">My Product</a></li>
                                     <li><hr className="dropdown-divider"></hr></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a className="dropdown-item" href="#">More...</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -136,8 +146,11 @@ const Portfoilo = () => {
                     </div>
                 </div>
             </nav>
+            <div className="MainPage">
             <div>
                 <br></br>
+                <img src={Photo} alt="Photos" id="MyPhoto" ref={imageRef} onClick={() => animationImage()}></img>
+                <span className='pos position-absolute top-3 text-light fs-5'>Click on the Image</span>
                 <span id="portfolio" className='fs-1 d-block'>
                     Hello ,Welcome to my Portfolio
                 </span>
@@ -237,6 +250,8 @@ const Portfoilo = () => {
                         </Card.Body>
                     </Card>
                 </div>
+                </div>
+                </div>
                 <div className="d-flex flex-column mt-4 border border-2 border-dark bg-dark w-100 h-50">
                     <article className='text-light'>Important Links</article>
                     <a href="/help" className="text-decoration-none">Help </a>
@@ -247,8 +262,7 @@ const Portfoilo = () => {
                     <label className='font-bold d-flex justify-content-center'>Website owned & maintained by: Akshit Verma</label>
                     <article className='text-light font-bold'>Copyright © 2024 Akshit Verma. All rights reserved, Last Updated: Friday, Oct 25, 2024</article>
                 </div>
-            </div>
-        </div >
+        </div>
     )
 }
 

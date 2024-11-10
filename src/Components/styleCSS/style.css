@@ -90,6 +90,7 @@
 .frequentlyaskdqs {
   margin-top: 5%;
 }
+
 .sociallink {
   position: relative;
   fill: #ef0fff;
@@ -104,6 +105,7 @@
   display: flex;
   justify-content: space-evenly;
 }
+  /* transition:  property-name | duration | easingfuntion | delay */
 /* animation : @keyframes duration | easing function | delay |
    iteration-count | direction | fill-mode | play-state | name */
 .social-link:hover {
@@ -120,11 +122,56 @@
   }
 }
 
-#nav {
+#nav{
+    height: 65px;
+}
+
+#navigation {
   position: fixed;
+  top: 10px;
   height: 70px;
   width: 100%;
   z-index: 1000;
+}
+
+#navigation .nav{
+  -webkit-box-reflect: below 4px
+  linear-gradient(to bottom, rgba(255, 0, 230, 0.2), rgba(217, 233, 0, 0.4));
+position: relative;
+width: 150px;
+height: 50px;
+justify-content: center;
+background: linear-gradient(
+  90deg,
+  rgb(185, 0, 31) 20%,
+  rgb(56, 98, 200) 80%
+);
+/* background-size: cover; */
+}
+
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+}
+
+#navigation .nav:visited{
+  position: relative;
+  background-color: #000;
+}
+
+#navigation .nav:hover {
+  background: linear-gradient(
+    270deg,
+    rgb(185, 0, 31) 20%,
+    rgb(56, 98, 200) 80%
+  );
+  color: rgb(185, 0, 31);
+  /* background-size: cover; */
+  top: 10px;
 }
 
 button {
@@ -153,68 +200,77 @@ button {
   background: #ef0fff;
 } */
 
-#portfolio{
-  position: relative;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-  animation: render 4s linear 0s 1 forwards;
-}
-
-.iam{
-  position: relative;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-  animation: render 4s linear 4s 1 forwards;
-}
-
-.post{
+#portfolio {
+  visibility:visible;
   position: relative;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   animation: render 4s linear 8s 1 forwards;
 }
 
-.float-start{
+.iam {
+  visibility:visible;
   position: relative;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   animation: render 4s linear 12s 1 forwards;
 }
 
-.resume{
+.post {
+  visibility:visible;
   position: relative;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   animation: render 4s linear 16s 1 forwards;
 }
 
-#resumeClick{
+.float-start {
+  visibility:visible;
   position: relative;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   animation: render 4s linear 20s 1 forwards;
 }
 
-.myProjects span{
+.resume {
+  visibility:visible;
   position: relative;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   animation: render 4s linear 24s 1 forwards;
 }
 
-.myProjects .float-start{
+#resumeClick {
+  visibility:visible;
   position: relative;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   animation: render 4s linear 28s 1 forwards;
 }
 
-.card-container{
+.myProjects span {
+  visibility:visible;
   position: relative;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   animation: render 4s linear 32s 1 forwards;
 }
 
+.myProjects .float-start {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 36s 1 forwards;
+}
+
+.card-container {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 40s 1 forwards;
+}
+
 @keyframes render {
-  from{
-    top:20px;
-    left: -600px;
+  from {
+    top: 1000px;
+    left: 0;
   }
-  to{
-    top:20px;
-    left:0;
+  to {
+    top: 0;
+    left: 0;
   }
 }
 /* #portfolio:hover {
@@ -270,4 +326,52 @@ button {
     top: 120px;
     left: 2408px;
   }
+}
+
+.Stopwatch ::selection {
+  color: rgb(255, 0, 128);
+  background: #06f7e7;
+}
+
+.select ::selection {
+  color: blue;
+  height: 20px;
+  background: rgb(255, 82, 111);
+}
+
+@keyframes animImage {
+  from{
+    top:1000px;
+    left:0;
+  }
+  to{
+    top:0;
+    left:0;
+  }
+}
+
+.MainPage{
+  visibility: hidden;
+}
+
+.MainPage span , .MainPage input{
+  visibility: visible;
+}
+
+.pos{
+  left: 430px;
+}
+
+#MyPhoto {
+  visibility: visible;
+  height: 24em;
+  background-size: contain;
+  background-position: center;
+  filter: grayscale(100%); /* Makes the image black and white */
+  transition: filter 0.4s ease; /* Smooth transition effect */
+}
+
+/* Hover effect to turn the image colorful */
+#MyPhoto:hover {
+  filter: grayscale(20%); /* Restores color on hover */
 }
