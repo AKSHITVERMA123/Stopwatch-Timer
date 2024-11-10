@@ -2,32 +2,18 @@ import React, { useState } from "react";
 import { useRef } from "react";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../node_modules/bootstrap/dist/js/bootstrap.js";
-const Useref = () => {
-    // const [count, setCount] = useState(0);
+const StopwatchTimer = () => {
+
     const [time, setTime] = useState(0);
     const [minutes, setMinutes] = useState(0);
-    // const countColorRef = useRef(0);
     const countStartRef = useRef(null);
     document.title="Make StopWatch Timer";
     document.body.style.background="#ff5943";
     document.body.style.height="450px";
-    // const inc = () => {
-    //        setCount(countRef => countRef + 1);
-    // };
-
-    // const dec = () => {
-    //        setCount(countRef => countRef - 1);
-    // };
-
     const changeStart = () => {
         countStartRef.current = setInterval(() => {
-            // setTime(countStartRef=> countStartRef + 1);
             setTime(time => time + 1);
         }, 1000);
-        // countColorRef.current.style.background="#718780";
-        // countColorRef.current.style.borderRadius="20%";
-        // countColorRef.current.style.height="2em";
-        // countColorRef.current.style.width="7em";
     }
 
     const changeStop = () => {
@@ -43,8 +29,8 @@ const Useref = () => {
     if (time > 1000) {
         alert("Stopped");
         setTime(0);
-        // alert(`counter is updated now to ${time}`);
     }
+
     if (time > 59) {
         setMinutes(minutes+1);
         setTime(0);
@@ -83,12 +69,6 @@ const Useref = () => {
         }
     }
 
-    // const addZero = () => {
-    //     if(time<10){
-    //       return true;
-    //     }
-    // }
-// #4819ff
     return (
         <div className="Stopwatch" style={{margin: "160px auto", background: "#7a48bb",height: "360px", width: "350px", border: "2px solid red", borderRadius:"5%"}}>
         <div className="d-flex flex-column justify-content-center align-items-center" style={{ height: "55vh" }}>
@@ -96,11 +76,7 @@ const Useref = () => {
             <span className="mx-auto d-flex column-gap-2">Your Timer is :
             <h2 className="m-0 p-0 w-50">
                
-                0: {minutes} :  
-                {/* {
-                    addZero ? '0'+time : time
-                } */}
-                 {time} seconds
+                0: {minutes} : {time} seconds
             </h2>
             </span>
             <div className="increment d-flex flex-column justify-content-center align-items-center">
@@ -122,4 +98,4 @@ const Useref = () => {
     );
 }
 
-export default Useref;
+export default StopwatchTimer;
