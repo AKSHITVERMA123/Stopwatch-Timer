@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/ StopwatchTimer' element={< StopwatchTimer></ StopwatchTimer>}></Route>
+          <Route path='/StopwatchTimer' element={< StopwatchTimer></ StopwatchTimer>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
