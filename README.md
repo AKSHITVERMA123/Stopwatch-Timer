@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# Portfolio_Website
+
+# StopWatch Timer App
 This is the portfolio all about me.
 =======
 # Getting Started with Create React App
