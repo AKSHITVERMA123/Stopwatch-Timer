@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import { useRef } from "react";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../../node_modules/bootstrap/dist/js/bootstrap.js";
+import {useState, useRef} from "react";
 const StopwatchTimer = () => {
 
     const [time, setTime] = useState(0);
+    const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const countStartRef = useRef(null);
     document.title="Make StopWatch Timer";
@@ -23,16 +21,22 @@ const StopwatchTimer = () => {
 
     const changeReset = () => {
         changeStop();
+        setMinutes(0);
         setTime(0);
     }
 
-    if (time > 1000) {
+    if (hours > 1) {
         alert("Stopped");
         setTime(0);
+        setMinutes(0);
+        setHours(0);
     }
-
+    if(minutes > 59){
+        setHours(hours=>hours+1);
+        setMinutes(0);
+    }
     if (time > 59) {
-        setMinutes(minutes+1);
+        setMinutes(minutes=>minutes+1);
         setTime(0);
     }
 
@@ -76,19 +80,19 @@ const StopwatchTimer = () => {
             <span className="mx-auto d-flex column-gap-2">Your Timer is :
             <h2 className="m-0 p-0 w-50">
                
-                0: {minutes} : {time} seconds
+                {hours}: {minutes} : {time} hours
             </h2>
             </span>
             <div className="increment d-flex flex-column justify-content-center align-items-center">
-                <button id="start" className="BTN" style={{ background: "#322845", padding: 0, borderRadius:"30%", width: "140px" }} onClick={changeStart} onMouseOver={changeColor}
+                <button id="start" className="BTN" style={{ background: "#322845",  margin: "15px", padding: "15px", borderRadius:"30%", width: "140px" }} onClick={changeStart} onMouseOver={changeColor}
                     onMouseOut={cbcolor}>
                     Start
                 </button>
-                <button id="stop" className="BTN" style={{ background: "#322845", padding: 0 , borderRadius:"30%", width: "140px"}} onClick={changeStop} onMouseOver={changesColor}
+                <button id="stop" className="BTN" style={{ background: "#322845", margin: "15px" ,padding: "15px", borderRadius:"30%", width: "140px"}} onClick={changeStop} onMouseOver={changesColor}
                     onMouseOut={cbcolor}>
                     Stop
                 </button>
-                <button id="reset" className="BTN" style={{ background: "#322845", padding: 0, borderRadius:"30%", width: "140px" }} onClick={changeReset} onMouseOver={changerColor}
+                <button id="reset" className="BTN" style={{ background: "#322845",  margin: "15px" ,padding: "15px", borderRadius:"30%", width: "140px" }} onClick={changeReset} onMouseOver={changerColor}
                     onMouseOut={cbcolor}>
                     Reset
                 </button>

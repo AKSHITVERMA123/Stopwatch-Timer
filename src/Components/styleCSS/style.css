@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#Search {
+  width: 50px;
+  height: 45px;
+  padding: 0;
+  margin: 0;
+}
+
+.car {
+  display: flex;
+  justify-content: center;
+}
+
+.carbtns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.newCars {
+  font-size: medium;
+  width: 7em;
+  height: 2.2em;
+  border-radius: 10%;
+  background: linear-gradient(
+    160deg,
+    rgb(120, 420, 200) 55%,
+    rgba(340, 220, 100, 1) 30%
+  );
+}
+
+.newCars:hover {
+  background: linear-gradient(
+    100deg,
+    rgb(100, 220, 100) 45%,
+    rgba(207, 11, 109, 1) 30%
+  );
+}
+
+.parent {
+  float: left;
+}
+
+/* .aboutTata{
+    position: relative;
+    top: 3.2%;
+  } */
+
+.Image {
+  position: relative;
+  top: 2%;
+  row-gap: 1%;
+  display: flex;
+  flex-direction: column;
+}
+
+.srno {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.Footer {
+  margin-top: 10%;
+  font-size: small;
+}
+.FAQ {
+  margin-right: 280px;
+}
+
+.FAQ2 {
+  margin-right: 440px;
+}
+
+.FAQ3 {
+  margin-right: 240px;
+}
+
+.FAQ4 {
+  margin-right: 360px;
+}
+
+.FAQ5 {
+  margin-right: 310px;
+}
+
+.frequentlyaskdqs {
+  margin-top: 5%;
+}
+
+.sociallink {
+  position: relative;
+  fill: #ef0fff;
+  width: 100%;
+  height: 50px;
+  size-adjust: 50px;
+  /* transition: box-shadow 0.3s ease; */
+}
+
+.social-list {
+  width: 1500px;
+  display: flex;
+  justify-content: space-evenly;
+}
+  /* transition:  property-name | duration | easingfuntion | delay */
+/* animation : @keyframes duration | easing function | delay |
+   iteration-count | direction | fill-mode | play-state | name */
+.social-link:hover {
+  position: relative;
+  animation: 0s linear 0s 1 normal none hoverable;
+}
+
+@keyframes hoverable {
+  100% {
+    fill: #e207ff;
+    /* top: 25%; */
+    /* box-sizing: border-box; */
+    /* box-shadow: 0px 4px 15px rgba(255, 1, 1, 0.4); */
+  }
+}
+
+#nav{
+    height: 65px;
+}
+
+#navigation {
+  position: fixed;
+  top: 10px;
+  height: 70px;
+  width: 100%;
+  z-index: 1000;
+}
+
+#navigation .nav{
+  -webkit-box-reflect: below 4px
+  linear-gradient(to bottom, rgba(255, 0, 230, 0.2), rgba(217, 233, 0, 0.4));
+position: relative;
+width: 150px;
+height: 50px;
+justify-content: center;
+background: linear-gradient(
+  90deg,
+  rgb(185, 0, 31) 20%,
+  rgb(56, 98, 200) 80%
+);
+/* background-size: cover; */
+}
+
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+}
+
+#navigation .nav:visited{
+  position: relative;
+  background-color: #000;
+}
+
+#navigation .nav:hover {
+  background: linear-gradient(
+    270deg,
+    rgb(185, 0, 31) 20%,
+    rgb(56, 98, 200) 80%
+  );
+  color: rgb(185, 0, 31);
+  /* background-size: cover; */
+  top: 10px;
+}
+
+button {
+  height: 40px;
+  width: 40px;
+}
+
+.main {
+  background: #707077;
+  width: 100%;
+  background: url("../../Images/backgroundImage.png");
+  background-size: cover;
+  height: 100%;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  background-origin: border-box;
+  /* transition:  property-name | duration */
+  /* transition:  property-name | duration | delay */
+  /* transition:  property-name | duration | easingfuntion */
+  /* transition:  property-name | duration | easingfuntion | delay */
+  /* transition: width 2s, height 2s, background 2s linear 0s; */
+}
+
+/* .main:hover{
+  width: 2000px;
+  background: #ef0fff;
+} */
+
+#portfolio {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 8s 1 forwards;
+}
+
+.iam {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 12s 1 forwards;
+}
+
+.post {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 16s 1 forwards;
+}
+
+.float-start {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 20s 1 forwards;
+}
+
+.resume {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 24s 1 forwards;
+}
+
+#resumeClick {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 28s 1 forwards;
+}
+
+.myProjects span {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 32s 1 forwards;
+}
+
+.myProjects .float-start {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 36s 1 forwards;
+}
+
+.card-container {
+  visibility:visible;
+  position: relative;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: render 4s linear 40s 1 forwards;
+}
+
+@keyframes render {
+  from {
+    top: 1000px;
+    left: 0;
+  }
+  to {
+    top: 0;
+    left: 0;
+  }
+}
+/* #portfolio:hover {
+  width: 2000px;
+} */
+
+.darklightmode {
+  width: 100%;
+  height: 10%;
+  border-radius: 50%;
+}
+
+#fullPreview {
+  font-size: 16px;
+  height: 12.5%;
+  background-color: #259992;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#fullPreview:before {
+  color: #fff;
+  content: "Full Preview";
+  position: absolute;
+  padding: 6px;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transition: all 0.4s ease;
+  z-index: 0;
+}
+
+#fullPreview:hover::before {
+  left: 0;
+}
+
+.Search {
+  width: 6em;
+}
+
+@keyframes bg {
+  from {
+    top: 120px;
+    left: 340px;
+  }
+  to {
+    top: 120px;
+    left: 2408px;
+  }
+}
+
+.Stopwatch ::selection {
+  color: rgb(255, 0, 128);
+  background: #06f7e7;
+}
+
+.select ::selection {
+  color: blue;
+  height: 20px;
+  background: rgb(255, 82, 111);
+}
+
+@keyframes animImage {
+  from{
+    top:1000px;
+    left:0;
+  }
+  to{
+    top:0;
+    left:0;
+  }
+}
+
+.MainPage{
+  visibility: hidden;
+}
+
+.MainPage span , .MainPage input{
+  visibility: visible;
+}
+
+.pos{
+  left: 430px;
+}
+
+#MyPhoto {
+  visibility: visible;
+  height: 24em;
+  background-size: contain;
+  background-position: center;
+  filter: grayscale(100%); /* Makes the image black and white */
+  transition: filter 0.4s ease; /* Smooth transition effect */
+}
+
+/* Hover effect to turn the image colorful */
+#MyPhoto:hover {
+  filter: grayscale(20%); /* Restores color on hover */
+}

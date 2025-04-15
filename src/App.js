@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import  StopwatchTimer from './Components/StopwatchTimer';
+import StopwatchTimer from './Components/StopwatchTimer';
 function App() {
   return (
     <div className="App">
