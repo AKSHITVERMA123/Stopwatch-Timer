@@ -1,7 +1,12 @@
 # StopWatch Timer App
+<<<<<<< HEAD
 
 # ###This is the stopwatch timer app for digital clock.
 
+=======
+### This is the stopwatch timer app for digital clock.
+=======
+>>>>>>> bcaba593cc5c4e1d758e05dc7b0e031d007e1c5b
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
